@@ -1,17 +1,22 @@
-function runFactorial(input) {
-  if (input === 0 || input === 1) return 1;
-  for(var i = input - 1; i >= 1; i--) {
-    input *= i;
-    console.log(input);
+
+function pigLatin(word) {
+  var vowels = ["a","e","i","o","u","A","E","I","O","U"];
+    result = word.split("");
+
+  if (vowels.includes(word[0])) {
+    return word += "way";
+  } else {
+    for (var i = 0; i < word.length; i++) {
+// test for consonants
+      if (!vowels.includes(word[i])) {
+        result.push(result.shift());
+      } else {
+        result.push('ay');
+        return result.join('');
+      }
+    }
   }
-  return input;
 }
 
-$(document).ready(function() {
-  $("#submit").click(function(e) {
-    e.preventDefault();
 
-    var inputtedNumber = parseInt($("#input").val());
-    runFactorial(inputtedNumber);
-  });
-});
+console.log(pigLatin("screwdriver"));
