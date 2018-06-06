@@ -1,6 +1,7 @@
 
 function pigLatin(word) {
   var vowels = ["a","e","i","o","u","A","E","I","O","U"];
+  var vowelsY = ["a","e","i","o","u","y","A","E","I","O","U","Y"];
     result = word.split("");
 
   if (vowels.includes(word[0])) {
@@ -12,11 +13,23 @@ function pigLatin(word) {
         result.push(result.shift());
       } else {
         result.push('ay');
-        return result.join('');
+        return result.join("");
       }
     }
   }
+  if (vowelsY.includes(word[5,11])) {
+    return word += "yay";
+  } else {
+    return result.join("");
+  }
+  // if (vowelsY.includes(word[5,11])) {
+  //   return word += "yay";
+  // } else {
+  //   return result.join("");
+  // }
 }
 
 
-console.log(pigLatin("screwdriver"));
+
+
+console.log(pigLatin("yesterday"));
