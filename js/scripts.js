@@ -4,11 +4,13 @@ function pigLatin(word) {
   var vowelsY = ["y","Y"];
   var lettersQ = ["qu","Qu"];
   var result = word.split("");
+  var outputWord = []
 
   if (word.includes(lettersQ[0]) || word.includes(lettersQ[1])) {
     result.shift(); // removes q
     result.shift(); // removes u
-    result.push('quay');
+    result.push("quay");
+  //  result.push(result + 'quay'); // needs to push "resut" to a new array "outputWord"
   }
    else if (vowels.includes(word[0])) {
     return word += "way";
@@ -28,11 +30,6 @@ function pigLatin(word) {
   } else {
     return result.join("");
   }
-
-
 }
 
-
-
-
-console.log(pigLatin("quickly"));
+console.log(pigLatin("quick"));
